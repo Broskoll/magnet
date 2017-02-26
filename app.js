@@ -63,7 +63,7 @@ request({
   }
   let $ = cheerio.load(body)
   let rows = []
-  $('tr>td:nth-child(2)', 'table#searchResult').filter((i) => min <= i && i <= max).each((i, row) => {
+  $('tr>td:nth-child(2)', 'table#searchResult').filter((i) => min-1 <= i && i <= max-1).each((i, row) => {
     rows[i] = {
       name:   $('.detName>a', row).text(),
       url:    $('a[href^=magnet]', row).attr('href')
